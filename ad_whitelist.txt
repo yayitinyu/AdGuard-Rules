@@ -1,8 +1,7 @@
-# Google Cloud 放行规则
+# 放行规则
 @@||console.cloud.google.com^
 @@||cloud.google.com^
 @@||googleapis.com^
-@@||beacons.gvt2.com
-@@||beacons2.gvt2.com
-@@||beacons3.gvt2.com
-@@||beacons.gcp.gvt2.com
+@@||moriapi.zeabur.app
+@@||sillytavern.7umi.de
+@@||mimi-dns.suimori.com
