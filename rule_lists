@@ -1,0 +1,63 @@
+! ===== 禁用 WebRTC (最强模式) =====
+! 屏蔽所有 STUN 请求
+||stun.$third-party
+||*^$stun
+! 屏蔽常见 STUN 服务商
+||stun.l.google.com^
+||stun1.l.google.com^
+||stun2.l.google.com^
+||stun3.l.google.com^
+||stun4.l.google.com^
+||stun.services.mozilla.com^
+||stun.cloudflare.com^
+||stun.voip.blackberry.com^
+||stun.nextcloud.com^
+||stun.voip.blackberry.com:3478
+||stun.freeswitch.org^
+||stun.cloudflare.com:3478
+||stun.twilio.com:3478
+||global.stun.twilio.com:3478
+||global.stun.twilio.com^
+||stun.twilio.com^
+||stun.chat.bilibili.com^
+||stun.miwifi.com^
+! 屏蔽 UDP 3478 (STUN 默认端口)
+||*^$udp,port=3478
+! 彻底禁用 WebRTC
+||stun.$dnsrewrite
+||turn.$dnsrewrite
+||stun.$third-party
+||turn.$third-party
+||stun.l.google.com:19302^
+||stun.hitv.com^
+||stun.letv.com^
+||stun.xtloud.com^
+||stun.qcloud.com^
+||stun.51vv.com^
+||stun.pps.tv^
+||stun.*.*
+||stun.*
+||*.stun.*
+||*.stun.*.*
+||turn.*^
+||turn.*.*^
+||*.turn.*^
+/stun/
+! 分流规则
+@@||bilibili.com^$dnsrewrite=https://doh.pub/dns-query
+@@||weibo.com^$dnsrewrite=https://doh.pub/dns-query
+@@||baidu.com^$dnsrewrite=https://doh.pub/dns-query
+@@||qq.com^$dnsrewrite=https://doh.pub/dns-query
+! 强制 Google 永远通过 DoH（防止劫持）
+||google.com^$dnsrewrite=https://mimi-dns.suimori.com/dns-query
+! 强制 GitHub 永远通过 DoH（保证不会 解析失败）
+||github.com^$dnsrewrite=https://mimi-dns.suimori.com/dns-query
+! 强制 Cloudflare 永远走 1.1.1.1
+||cloudflare.com^$dnsrewrite=https://cloudflare-dns.com/dns-query
+! 强制 OpenAI 永远通过 DoH
+||openai.com^$dnsrewrite=https://mimi-dns.suimori.com/dns-query
+||chatgpt.com^$dnsrewrite=https://mimi-dns.suimori.com/dns-query
+! 强制 Discord 永远通过 DoH
+||discord.com^$dnsrewrite=https://mimi-dns.suimori.com/dns-query
+! 强制 Bing 永远通过 DoH
+||bing.com^$dnsrewrite=https://mimi-dns.suimori.com/dns-query
