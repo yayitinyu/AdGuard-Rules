@@ -6,6 +6,12 @@
 ||stun3.l.google.com^
 ||stun4.l.google.com^
 ||stun.services.mozilla.com^
+||stun.cloudflare.com^
+||stun.nextcloud.com^
+||stun.voip.blackberry.com^
+||stun.freeswitch.org^
+||stun.chat.bilibili.com^
+||stun.miwifi.com^
 ||*^$webrtc
 ||*^$stun
 ||*^$udp,port=3478
