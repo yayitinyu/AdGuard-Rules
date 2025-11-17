@@ -1,0 +1,4 @@
+# Google Cloud 放行规则
+@@||console.cloud.google.com^
+@@||cloud.google.com^
+@@||googleapis.com^
