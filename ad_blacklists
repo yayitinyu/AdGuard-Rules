@@ -1,18 +1,22 @@
-# 禁用 WebRTC
+! ===== 禁用 WebRTC (最强模式) =====
+
+! 屏蔽所有 STUN 请求
 ||stun.$third-party
+||*^$stun
+
+! 屏蔽常见 STUN 服务商
 ||stun.l.google.com^
-||stun1.l.google.com^
-||stun2.l.google.com^
-||stun3.l.google.com^
-||stun4.l.google.com^
 ||stun.services.mozilla.com^
 ||stun.cloudflare.com^
-||stun.nextcloud.com^
-||stun.voip.blackberry.com^
-||stun.freeswitch.org^
 ||stun.chat.bilibili.com^
 ||stun.miwifi.com^
-||*^$webrtc
-||*^$stun
+
+! 屏蔽 UDP 3478 (STUN 默认端口)
 ||*^$udp,port=3478
+
+! AdGuard 特殊指令：彻底禁用 WebRTC
 webrtc-blocking: * true
+
+! （可选）阻断 WebRTC 通过 HTTPS 的候选通道
+||turn.$third-party
+||turn.$all
