@@ -1,7 +1,0 @@
-# 放行规则
-@@||console.cloud.google.com^
-@@||cloud.google.com^
-@@||googleapis.com^
-@@||moriapi.zeabur.app^
-@@||sillytavern.7umi.de^
-@@||mimi-dns.suimori.com^
